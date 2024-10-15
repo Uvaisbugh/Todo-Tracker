@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="banner">
+            <div class="bannertext">
+                <h1>Update Settings</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+            <form method="POST" class="p-3 shadow">
+                {% csrf_token %}
+                {{Ft.as_p }}
+              <button type="submit" class="btn btn-success">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

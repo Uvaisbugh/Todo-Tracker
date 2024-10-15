@@ -1,0 +1,40 @@
+.banner {
+    background-color: #C0CAD8; /* Background color */
+    width: 100%;               /* Full-width banner */
+    height: 40vh;              /* Responsive height */
+    display: flex;             /* Flexbox for centering */
+    flex-direction: column;    /* Stack items vertically */
+    justify-content: center;   /* Center content vertically */
+    align-items: center;       /* Center content horizontally */
+    text-align: center;        /* Center text */
+    margin-bottom: 50px;       /* Space below the banner */
+}
+
+.bannertext {
+    color: #1D3C5E;            /* Text color */
+    font-size: 10rem;           /* Title font size */
+    font-family: 'Times New Roman', serif;
+    font-weight: 600;
+    font-style: bold;     /* Bold font */
+    margin: 0;                 /* Remove default margin */
+}
+
+.bannerpera {
+    color: #7B97B7;            /* Same text color for consistency */
+    font-size: 1.2rem;         /* Paragraph font size */
+    font-family: Arial, sans-serif; /* Simple sans-serif font */
+    font-weight: normal;       /* Normal font weight */
+    margin: 10px 0 0;         /* Top margin for spacing */
+    max-width: 80%;            /* Keep it responsive */
+    line-height: 1.5;          /* Improve readability */
+}
+
+/* Optional media queries for responsiveness */
+@media (max-width: 768px) {
+    .bannertext {
+        font-size: 3rem; /* Smaller title font size */
+    }
+    .bannerpera {
+        font-size: 1.2rem; /* Smaller paragraph size */
+    }
+}

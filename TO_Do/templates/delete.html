@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="banner">
+            <div class="bannertext">
+                <h1>Confirm Delete</h1>
+            </div>
+        </div>
+    </div>
+</div>
+  <form method="POST" class="p-3 shadow">
+                {% csrf_token %}
+    <p>Are you sure to delete?</p>
+      <button type="submit" >Delete</button>
+  </form>
+{% endblock %}

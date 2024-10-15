@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="banner">
+            <div class="bannertext">
+                <h1>Task Tracker</h1>
+            </div>
+            <div class="bannerpera">
+                  <p>"To do lists are the backbone of productivity." — Unknown</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+
+            <form method="POST" class="p-4 shadow">
+                {% csrf_token %}
+                <div  class="form-group">
+                    <input type="text"  class="form-control" name="task" placeholder="task">
+                </div>
+                <div class="form-group">
+                    <input type="Priority" class="form-control" name="Priority" placeholder="Priority">
+                </div>
+                 <div class="form-group">
+                    <input type="date" class="form-control" name="Tdate" placeholder="Date">
+                </div>
+                <input type="submit" class="btn btn-dark">
+            </form>
+        </div>
+
+        <div class="col-md-5">
+            <h4 style="color:#4D6DA8"> Task To be Completed</h4>
+              {% for i in task %}
+            <div class="shadow card">
+                <div class="card-body">
+                <h5 class="card-title"> {{ i.name }}</h5>
+                <p><b> {{ i.priority }}</b></p>
+                <p><b> {{ i.Tdate }}</b></p>
+                <a class="btn btn-secondary" href="{% url 'update' i.id %}">Update</a>
+                <a class="btn btn-danger" href="{% url 'delete' i.id %}">Done</a>
+            </div>
+            </div>
+             <br>
+              {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
